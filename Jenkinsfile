@@ -8,7 +8,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                echo "${paramas.server}"
+                echo "${params.server}"
                 sh '''
                 
                 echo $server
