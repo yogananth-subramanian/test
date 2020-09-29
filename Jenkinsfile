@@ -13,7 +13,7 @@ pipeline {
                 
                 echo $server
                 '''
-                build(job: 'worker', parameters: [string(name: 'server', value:"${server}")] )
+                build(job: 'worker', parameters: [string(name: 'server', value:"${params.server}")] )
 
             }
         }
