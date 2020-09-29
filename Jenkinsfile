@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        choice(name: 'server', choices: ['master', 'worker'], description: 'Pick something')
+        choice(name: 'server', choices: ['worker', 'master'], description: 'Pick something')
     }
 
     stages {
@@ -13,8 +13,7 @@ pipeline {
                 
                 echo $server
                 '''
-                build(job: 'worker', parameters: [string(name: 'server', value:"${server}")] )
-
+                
             }
         }
     }
